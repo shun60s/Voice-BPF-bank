@@ -4,7 +4,7 @@ A trial estimation of vocal tract as very simple tube model, two tubes model,
 using several peak and drop-peak frequencies of vowel voice, by precomputed grid search and downhill simplex method,
 with frequency limited condition.  
 
-[github repository](https://github.com/shun60s/Voice-BPF-bank/Vocal-Tube-Estimation/)  
+[github repository](https://github.com/shun60s/Voice-BPF-bank/tree/master/Vocal-Tube-Estimation/)  
 
 ## usage    
 
