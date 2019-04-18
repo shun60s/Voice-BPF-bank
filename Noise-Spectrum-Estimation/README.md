@@ -3,7 +3,7 @@
 A trial estimation of noise source spectrum condition by fitting Gaussian distribution on BPF bank output.  
 
 
-[github repository](https://github.com/shun60s/Vocal-Tube-Estimation/Noise-Spectrum-Estimation/)  
+[github repository](https://github.com/shun60s/Voice-BPF-bank/Noise-Spectrum-Estimation/)  
 
 ## usage   
 
@@ -13,8 +13,9 @@ Compute band pass filter output.
 cd ../  
 python3 main1.py -w wav-file-name(mono,16bit) -f frame-number -r result_figure  
 ```
-Please see README.md of the top directory about usage. (-f negative value is not available)  
+Please see README.md of the top directory about usage.   
 It will save BPF bank data, *bpf_env_out*.npz of the frame-number in the directory specified by argument -r.  
+(-f negative value is not available)  
 
 ### estimation  
 Get estimated Gaussian distribution, center frequency, standard deviation, and  peak strength.   

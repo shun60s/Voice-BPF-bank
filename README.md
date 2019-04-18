@@ -3,7 +3,7 @@
 Band Pass Filter bank and its application to voice sound analysis.  
 Processing band pass filters of which center frequency is from 2000Hz to 4500Hz step by 5Hz and shows gray scale image as output.  
 
-[github repository](https://github.com/shun60s/Vocice-BPF-bank/)  
+[github repository](https://github.com/shun60s/Voice-BPF-bank/)  
 
 ## usage   
 
