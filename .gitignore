@@ -1,0 +1,17 @@
+/__pycahe__/
+/old/
+old/
+/result/
+result/
+/result_*/
+result_*/
+/wav2/
+*.bat
+*.pyc
+*.md~
+*.py~
+*.*~
+*.pdf
+*.wav
+*.txt
+*.npz
