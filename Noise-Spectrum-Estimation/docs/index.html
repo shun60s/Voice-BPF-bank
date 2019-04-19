@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noise Spectrum Estimation   </title>
+<meta name="description" content="noise source spectrum fitting Gaussian distribution" />
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container-lg px-3 my-5 markdown-body">
+<h1>Noise Spectrum Estimation   </h1>
+
+<p>A trial estimation of noise source spectrum condition by fitting Gaussian distribution on BPF bank output.<br /></p>
+
+
+<p><a href="https://github.com/shun60s/Voice-BPF-bank/tree/master/Noise-Spectrum-Estimation">github repository</a><br /></p>
+
+<h2>usage   </h2>
+
+<h3>preparation  </h3>
+<p>Compute band pass filter output.<br /></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+cd ../<br />
+python3 main1.py -w wav-file-name(mono,16bit) -f frame-number -r result_figure<br />
+</code></pre></div></div>
+<p>Please see README.md of the top directory about usage. <br />
+It will save BPF bank data, *bpf_env_out*.npz of the frame-number in the directory specified by argument -r.<br />
+(-f negative value is not available)<br /></p>
+
+<h3>estimation  </h3>
+<p>Get estimated Gaussian distribution, center frequency, standard deviation, and  peak strength. <br /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+python3 est_nss1.py -r result_figure<br />
+</code></pre></div></div>
+<p>There is 1 argument.<br />
+-r specify the directory of BPF bank data, *bpf_env_out*.npz.<br />
+ </p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+example:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+vowel /i/             : python3 est_nss1.py -r ../result_i<br />
+fricative voice /si/  : python3 est_nss1.py -r ../result_si<br />
+</code></pre></div></div>
+</code></pre></div></div>
+
+<p><img src="i_16k_f2_gauss.png" alt="figure1" ><br />
+<img src="i_16k_f2_estimation.png" alt="figure2" ><br />
+<img src="si_16k_f8_gauss.png" alt="figure3" ><br />
+<img src="si_16k_f8_estimation.png" alt="figure4" ><br /></p>
+
+<h2>Document  </h2>
+<!--
+<p>For more information, please see <a href="https://wsignal.sakura.ne.jp/onsei2007/voice-BPF-bank-e.html">related WEB</a> or 
+<a href="https://wsignal.sakura.ne.jp/onsei2007/voice-BPF-bank.html">same content in Japanese</a><br /></p>
+-->
+
+<h2>License    </h2>
+<p>MIT<br /></p>
+
+
+</div>
+</body>
+</html>

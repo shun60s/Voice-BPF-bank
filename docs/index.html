@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voice BPF bank   </title>
+<meta name="description" content="Band Pass Filter bank and its application to voice sound analysis." />
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container-lg px-3 my-5 markdown-body">
+<h1>Voice BPF bank   </h1>
+
+<p>Band Pass Filter bank and its application to voice sound analysis.<br />
+Processing band pass filters of which center frequency is from 2000Hz to 4500Hz step by 5Hz and shows gray scale image as output.<br /></p>
+
+<p><a href="https://github.com/shun60s/Voice-BPF-bank/">github repository</a><br /></p>
+
+<h2>usage   </h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+python3 main1.py -w wav-file-name(mono,16bit) -f frame-number -r result_figure<br />
+</code></pre></div></div>
+<p>There are 5 arguments.<br />
+-w specify input wav filename (mono,16bit)<br />
+-f specify the frame number to analyze. if negative value, all frames (whole length) are analyzed.<br />
+-r specify the directory name to save result image.<br />
+--en   add this option to save result image instead of display.<br />
+--leak add this option to see spectrum leak caused by the envelop. (not available with --en)<br />
+Computed BPF bank output data will be save in  BPF_out.<br /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+examples: all frames (whole length) analysis<br />
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+vowel /i/            : python3 main1.py -w wav/i_1-16k.wav -f -1 -r result_i<br />
+fricative voice /si/ : python3 main1.py -w wav/si_1-16k.wav -f -1 -r result_si<br />
+</code></pre></div></div>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+examples: specified frame analysis
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+vowel /i/            : python3 main1.py -w wav/i_1-16k.wav -f 2  -r result_i<br />
+fricative voice /si/ : python3 main1.py -w wav/si_1-16k.wav -f 8  -r result_si<br />
+</code></pre></div></div>
+</code></pre></div></div>
+<p><img src="i_1-16k_2_si_1-16k_8.png" alt="figure1" ><br /></p>
+
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+examples: see spectrum leak caused by the envelop<br />
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+vowel /i/            : python3 main1.py -w wav/i_1-16k.wav -f 2  --leak<br />
+</code></pre></div></div>
+</code></pre></div></div>
+<p><img src="i_1-16k_2_leak.png" alt="figure2" ><br /></p>
+
+
+<h3>resampling tool  </h3>
+
+<p>re-sampling wav to 16Khz sampling<br /></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+cd wav
+python3 resample1.py -w wav-file-name(mono,16bit)<br />
+</code></pre></div></div>
+
+
+<h2>Application  </h2>
+
+<p>Please see subdirectory of Noise-Spectrum-Estimation to estimate noise source condition.<br />
+And also, see subdirectory of Vocal-Tube-Estimation to estimate vocal tract condition.<br /></p>
+
+
+<h2>Document  </h2>
+<!--
+<p>For more information, please see <a href="https://wsignal.sakura.ne.jp/onsei2007/voice-BPF-bank-e.html">related WEB</a> or 
+<a href="https://wsignal.sakura.ne.jp/onsei2007/voice-BPF-bank.html">same content in Japanese</a><br /></p>
+-->
+<h2>License    </h2>
+<p>MIT<br /></p>
+
+
+
+</div>
+</body>
+</html>
