@@ -2,7 +2,7 @@
 
 A trial estimation of vocal tract as very simple tube model, two tubes model, 
 using several peak and drop-peak frequencies of vowel voice, by precomputed grid search and downhill simplex method,
-with frequency limited condition.  
+with frequency lower limit condition.  
 
 [github repository](https://github.com/shun60s/Voice-BPF-bank/tree/master/Vocal-Tube-Estimation/)  
 
@@ -11,16 +11,16 @@ with frequency limited condition.
 ### preparation   
 make precomputed data for grid search to estimate two tubes model.  
 ```
-python3 pre_compute1.py -l maxinum-tube-length -m minimum-frequency  
+python3 pre_compute1.py -l maximum-tube-length -m minimum-frequency  
 ```
 There are 2 arguments.  
 -l specify maximum whole tube length[cm]  
 -m specify detect minimum frequency [Hz]  
-It will save pks_dpks_stack_tube2.npz.   
+It will save pks_dpks_stack_tube2.npz as precomputed data.  
 
 ```
-example: detect minimum frequency is from 2000Hz.  whole tube length is 10cm.  
-    python3 pre_compute2.py -m 2000 -l 10  
+example: detect minimum frequency is from 2000Hz.  whole tube length is 26cm.  
+    python3 pre_compute2.py -m 2000 -l 26  
 ```
 
 Process high pass filter to reduce effect of pitch(F0) and F1.  
@@ -46,8 +46,8 @@ Result will save as figure in the result_figure directory.
 Input wav format should be mono,16bit,16Khz.   
  
 ```
-example: specified frame no.2 analysis  
-    vowel /i/ : python3 pks2tube2.py -w ../wav/i_1-16k_hpf.wav  -r result_figure -f 2
+example: specified frame analysis  
+    vowel /i/ frame no.2 : python3 pks2tube2.py -w ../wav/i_1-16k_hpf.wav  -r result_figure -f 2
 ```
 
 ![figure1](docs/i_1-16k_hpf_2.png)  

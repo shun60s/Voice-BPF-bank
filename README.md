@@ -50,8 +50,8 @@ python3 resample1.py -w wav-file-name(mono,16bit)
 
 ## Application  
 
-Please see subdirectory of Noise-Spectrum-Estimation to estimate noise source condition.  
-And also, see subdirectory of Vocal-Tube-Estimation to estimate vocal tract condition.  
+Please see [subdirectory of Noise-Spectrum-Estimation](https://github.com/shun60s/Voice-BPF-bank/tree/master/Noise-Spectrum-Estimation/) to estimate noise source condition.  
+And also, see [subdirectory of Vocal-Tube-Estimation](https://github.com/shun60s/Voice-BPF-bank/tree/master/Vocal-Tube-Estimation/) to estimate vocal tract condition.  
 
 
 ## Document  

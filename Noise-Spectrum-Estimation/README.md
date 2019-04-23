@@ -3,7 +3,7 @@
 A trial estimation of noise source spectrum condition by fitting Gaussian distribution on BPF bank output.  
 
 
-[github repository](https://github.com/shun60s/Voice-BPF-bank/tree/master/Noise-Spectrum-Estimation)  
+[github repository](https://github.com/shun60s/Voice-BPF-bank/tree/master/Noise-Spectrum-Estimation/)  
 
 ## usage   
 
