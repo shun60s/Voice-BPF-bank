@@ -62,6 +62,7 @@ python3 resample1.py -w wav-file-name(mono,16bit)
 
 ## Document  
 
+For more information, please see [related WEB](https://wsignal.sakura.ne.jp/onsei2007/Voice-BPF-bank-e.html) or [same content in Japanese](https://wsignal.sakura.ne.jp/onsei2007/Voice-BPF-bank.html).  
 
 
 ## License    
